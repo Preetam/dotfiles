@@ -121,3 +121,6 @@ function git_branch {
 
 PS1="\n  ∂\[\e[00;30m\] \[\e[0m\]\[\e[00;34m\][\[\e[0m\]\[\e[00;30m\]\W\[\e[0m\]\[\e[00;34m\]]\[\e[0m\]\$(git_branch)\[\e[00;30m\]:\[\e[0m\] "
 PS2="    | "
+
+export PATH=$PATH:/usr/local/go/bin/go
+export GOPATH=$HOME/go
