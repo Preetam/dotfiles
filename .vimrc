@@ -12,3 +12,6 @@ set shiftwidth=2
 set mouse=a
 
 set pastetoggle=<F2>
+
+" for FreeBSD
+set backspace=indent,eol,start
