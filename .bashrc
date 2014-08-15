@@ -119,7 +119,7 @@ function git_branch {
   git rev-parse --abbrev-ref HEAD 2> /dev/null | sed -e 's/\(.*\)/\ \(\1\)/'
 }
 
-PS1="\n  ∂ [\[\e[00;37m\]\t\[\e[00;30m\]]\[\e[00;30m \[\e[0m\]\[\e[01;31m\][\[\e[0m\]\[\e[00;30m\]\W\[\e[0m\]\[\e[01;31m\]]\[\e[0m\]\$(git_branch)\[\e[00;30m\]:\[\e[0m\] "
+PS1="\n  ∂ [\[\e[00;37m\]\t\[\e[00;30m\]]\[\e[00;30m\] \[\e[0m\]\[\e[01;31m\][\[\e[0m\]\[\e[00;30m\]\W\[\e[0m\]\[\e[01;31m\]]\[\e[0m\]\$(git_branch)\[\e[00;30m\]:\[\e[0m\] "
 PS2="  \[\e[00;37m\].\[\e[00;30m\] "
 
 export PATH=$PATH:/usr/local/go/bin
