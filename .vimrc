@@ -1,17 +1,34 @@
-syntax on
+""" For Go """
+" Some Linux distributions set filetype in /etc/vimrc.
+" Clear filetype flags before changing runtimepath to force Vim to reload them.
+if exists("g:did_load_filetypes")
+  filetype off
+  filetype plugin indent off
+endif
+set runtimepath+=/usr/local/go/misc/vim " replace $GOROOT with the output of: go env GOROOT
 filetype plugin indent on
+syntax on
+
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
+
+" make sure gnome-terminal advertises 256 colors
+if $COLORTERM == 'gnome-terminal'
+  set t_Co=256
+endif
+
+" add line numbers
 set number
-
-" GREY LINE NUMBERS
-:hi LineNr ctermfg=grey
-"
-
-set background=dark
-set tabstop=2
-set shiftwidth=2
-set mouse=a
-
 set pastetoggle=<F2>
 
-" for FreeBSD
-set backspace=indent,eol,start
+set tabstop=4
+set shiftwidth=4
+
+" some silly stuff for escaping
+set t_ZH=[3m
+set t_ZR=[23m
+
+set t_MD=[01m
+set t_ME=[0m
+
+" color scheme
+colorscheme infimum
